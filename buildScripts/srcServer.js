@@ -5,18 +5,18 @@
 const express = require('express');
 const path = require('path');
 const open = require('open');
+const config = require('../buildScripts/buildScripts.config')();
 
-const port = 3000;
 const app = express();
 
 app.get('/', function(request, response) {
     response.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
-app.listen(port, function(err) {
+app.listen(config.port, function(err) {
     if (err) {
         console.log(err);
     } else {
-        open('http://localhost:' + port);
+        open('http://localhost:' + config.port);
     }
 });
