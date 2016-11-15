@@ -3,14 +3,14 @@
  */
 import chalk from 'chalk';
 import localtunnel from  'localtunnel';
-const config = require('../buildScripts/buildScripts.config')();
+import { config } from '../buildScripts/buildScripts.config';
 
 var tunnel = localtunnel(config.port, {subdomain: config.localtunnelSubDomain},
     function(err, tunnel) {
         if (err) {
             console.log(err);
         } else {
-            console.log(chalk.green(`Sharing http://localhost:${config.port} at ${tunnel.url}`));
+            console.log(chalk.green(`Sharing http://localhost:${config.port} at ${tunnel.url}...`));
         }
     }
 );

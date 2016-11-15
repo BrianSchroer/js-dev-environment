@@ -1,11 +1,11 @@
 /**
  * Development source server
  */
-import chalk from 'chalk';
+import chalk from 'chalk'
 import express from 'express';
-import path from 'path';
+import path from 'path'
 import open from 'open';
-const config = require('../buildScripts/buildScripts.config')();
+import { config } from '../buildScripts/buildScripts.config';
 
 const app = express();
 
