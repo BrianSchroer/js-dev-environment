@@ -1,4 +1,6 @@
-// Development source server
+/**
+ * Development source server
+ */
 
 const express = require('express');
 const path = require('path');
