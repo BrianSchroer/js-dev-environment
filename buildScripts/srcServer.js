@@ -1,10 +1,10 @@
 /**
  * Development source server
  */
-
-const express = require('express');
-const path = require('path');
-const open = require('open');
+import chalk from 'chalk';
+import express from 'express';
+import path from 'path';
+import open from 'open';
 const config = require('../buildScripts/buildScripts.config')();
 
 const app = express();
@@ -17,6 +17,8 @@ app.listen(config.port, function(err) {
     if (err) {
         console.log(err);
     } else {
-        open('http://localhost:' + config.port);
+        const url = 'http://localhost:' + config.port;
+        open(url);
+        console.log(chalk.green(`Serving ${url}...`));
     }
 });

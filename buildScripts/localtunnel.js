@@ -1,9 +1,8 @@
 /**
  * Share site via localtunnel
  */
-
-const chalk = require('chalk');
-const localtunnel = require('localtunnel');
+import chalk from 'chalk';
+import localtunnel from  'localtunnel';
 const config = require('../buildScripts/buildScripts.config')();
 
 var tunnel = localtunnel(config.port, {subdomain: config.localtunnelSubDomain},
