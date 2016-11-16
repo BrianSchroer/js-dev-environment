@@ -1,7 +1,7 @@
 /**
  * build script configuration constants
  */
-export let config = {
+export default {
     localtunnelSubDomain: 'bschroer',
     port: 3000
 };
