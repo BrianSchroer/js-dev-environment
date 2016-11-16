@@ -3,12 +3,29 @@
   "version": "1.0.0",
   "description": "JavaScript development environment Pluralsight course by Cory House",
   "scripts": {
-      "prestart": "babel-node buildScripts/startMessage.js",
-      "start": "npm-run-all --parallel security-check open:src",
-      "open:src": "babel-node buildScripts/srcServer.js",
-      "security-check": "nsp check",
+      "// Run eslint against project's JavaScript files...": "",
+      "lint": "esw webpack.config.*, src, buildScripts --color",
+
+      "// Run eslint continually (watch for changes)": "",
+      "lint:watch": "npm run lint -- --watch",
+
+      "// Share running app in localhost via localtunnel...": "",
       "localtunnel": "babel-node buildScripts/localtunnel.js",
-      "share": "npm-run-all --parallel open:src localtunnel"
+
+      "// Launch the app...": "",
+      "open:src": "babel-node buildScripts/srcServer.js",
+
+      "// Launch app and share it via localtunnell...": "",
+      "share": "npm-run-all --parallel open:src localtunnel",
+
+      "// Run security check against node packages...": "",
+      "security-check": "nsp check",
+
+      "// (Automatically run before start): Show 'starting...' message...": "",
+      "prestart": "babel-node buildScripts/startMessage.js",
+
+       "// Perform security check, then launch the app...": "",
+      "start": "npm-run-all --parallel security-check open:src lint:watch"
   },
   "author": "Brian Schroer",
   "license": "MIT",

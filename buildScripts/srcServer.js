@@ -1,6 +1,9 @@
 /**
  * Development source server
  */
+
+/* eslint-disable no-console */
+
 import chalk from 'chalk';
 import express from 'express';
 import path from 'path';
