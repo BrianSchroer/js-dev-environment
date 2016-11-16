@@ -24,8 +24,14 @@
       "// (Automatically run before start): Show 'starting...' message...": "",
       "prestart": "babel-node buildScripts/startMessage.js",
 
-       "// Perform security check, then launch the app...": "",
-      "start": "npm-run-all --parallel security-check open:src lint:watch"
+      "// Perform security check, then launch the app...": "",
+      "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
+
+      "// Run unit tests": "",
+      "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+
+      "// Run unit tests, watch for code changes and rerun when necessary": "",
+      "test:watch": "npm run test -- --watch"
   },
   "author": "Brian Schroer",
   "license": "MIT",

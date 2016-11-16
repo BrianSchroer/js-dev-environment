@@ -10,7 +10,7 @@ import path from 'path';
 import open from 'open';
 import webpack from 'webpack';
 
-import config from '../buildScripts/buildScripts.config';
+import scriptsConfig from '../buildScripts/buildScripts.config';
 import webpackConfig from '../webpack.config.dev';
 
 const app = express();
@@ -25,11 +25,11 @@ app.get('/', function(request, response) {
     response.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
-app.listen(config.port, function(err) {
+app.listen(scriptsConfig.port, function(err) {
     if (err) {
         console.log(err);
     } else {
-        const url = 'http://localhost:' + config.port;
+        const url = 'http://localhost:' + scriptsConfig.port;
         open(url);
         console.log(chalk.green(`Serving ${url}...`));
     }
