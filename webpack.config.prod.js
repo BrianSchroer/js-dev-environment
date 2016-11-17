@@ -4,6 +4,25 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
 
+const options = {
+    template: 'src/index.html',
+    minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLS: true
+    },
+    inject: true,
+    // Available in HTML via htmlWebpackPlugin.options.trackJSToken:
+    trackJSToken: 'e770eeaf2191426290b7053b9df95994'
+};
+
 export default {
     debug: true,
     devtool: 'source-map',
@@ -30,22 +49,7 @@ export default {
         new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
 
         // Create HTML file that includes reference to bundled JS:
-        new HtmlWebpackPlugin({
-            template: 'src/index.html',
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                removeRedundantAttributes: true,
-                useShortDoctype: true,
-                removeEmptyAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                keepClosingSlash: true,
-                minifyJS: true,
-                minifyCSS: true,
-                minifyURLS: true
-            },
-            inject: true
-        }),
+        new HtmlWebpackPlugin(options),
 
         // Eliminate duplicate packages when generating bundle:
         new webpack.optimize.DedupePlugin(),
