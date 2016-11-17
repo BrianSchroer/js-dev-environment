@@ -24,6 +24,8 @@ getUsers().then(result => {
 function setUpDeleteLinks() {
     const deleteLinks = global.document.getElementsByClassName('deleteUser');
 
+    // Array.from is needed because deleteLinks is an HTMLCollection
+    // (which is iterable, but not an actual array)
     Array.from(deleteLinks, link => {
         link.onclick = function(event) {
             const elem = event.target;

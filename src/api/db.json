@@ -1,3 +1,34 @@
 {
-  "users": []
+    "users": [
+        {
+            "id": 1528435,
+            "firstName": "Maida",
+            "lastName": "Grady",
+            "email": "Keshawn56@gmail.com"
+        },
+        {
+            "id": 27786720,
+            "firstName": "Nick",
+            "lastName": "Bahringer",
+            "email": "Aaron_Fay92@hotmail.com"
+        },
+        {
+            "id": 34523632,
+            "firstName": "Nestor",
+            "lastName": "Mraz",
+            "email": "Anabel90@gmail.com"
+        },
+        {
+            "id": 46079291,
+            "firstName": "Zelda",
+            "lastName": "Torphy",
+            "email": "Rebecca_Simonis37@yahoo.com"
+        },
+        {
+            "id": 77946835,
+            "firstName": "Jo",
+            "lastName": "Kemmer",
+            "email": "Kaylee.Lemke58@gmail.com"
+        }
+    ]
 }

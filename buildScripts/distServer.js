@@ -1,22 +1,18 @@
 /* eslint-disable no-console */
 
 import chalk from 'chalk';
+import compression from 'compression';
 import express from 'express';
 import path from 'path';
 import open from 'open';
-import webpack from 'webpack';
 
 import scriptsConfig from '../buildScripts/buildScripts.config';
-import webpackConfig from '../webpack.config.dev';
 
 const app = express();
-const compiler = webpack(webpackConfig);
-const serveFromPath = path.join(__dirname, '../src');
+const serveFromPath = path.join(__dirname, '../dist');
 
-app.use(require('webpack-dev-middleware')(compiler, {
-    noInfo: true,
-    publicPath: webpackConfig.output.publicPath
-}));
+app.use(compression());
+app.use(express.static(serveFromPath));
 
 app.get('/', function(request, response) {
     response.sendFile(path.join(serveFromPath, '/index.html'));
