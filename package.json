@@ -16,6 +16,7 @@
     "prestart-mockapi": "npm run generate-mock-data",
     "start-mockapi": "json-server --watch src/api/db.json --port 3001",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test-verbose": "mocha --reporter spec buildScripts/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch"
   },
   "author": "Brian Schroer",
