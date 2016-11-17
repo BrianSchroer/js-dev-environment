@@ -39,5 +39,5 @@ jspm_packages
 # Production dist folder
 dist
 
-# mock API "database"
+# mock API "database" - ignored via: git update-index --assume-unchanged src/api/db.json
 src/api/db\.json
