@@ -6,7 +6,7 @@ import path from 'path';
 import open from 'open';
 import webpack from 'webpack';
 
-import scriptsConfig from '../buildScripts/buildScripts.config';
+import config from '../src/config';
 import webpackConfig from '../webpack.config.dev';
 
 const app = express();
@@ -31,11 +31,11 @@ app.get('/users', function(request, response) {
     ]);
 });
 
-app.listen(scriptsConfig.port, function(err) {
+app.listen(config.port, function(err) {
     if (err) {
         console.log(err);
     } else {
-        const url = 'http://localhost:' + scriptsConfig.port;
+        const url = 'http://localhost:' + config.port;
         open(url);
         console.log(chalk.green(`Serving ${url} from ${serveFromPath}...`));
     }

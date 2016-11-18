@@ -2,11 +2,6 @@
   "name": "js-dev-environment",
   "version": "1.0.0",
   "description": "JavaScript development environment Pluralsight course by Cory House",
-  "config": {
-    "localtunnelSubDomain": "bschroer",
-    "port": "3000",
-    "mockApiPort": "3001"
-  },
   "scripts": {
     "prebuild": "npm-run-all clean-dist test lint",
     "build": "babel-node buildScripts/build.js",
@@ -26,7 +21,7 @@
     "start": "npm-run-all --parallel security-check start-mockapi open:src lint:watch test:watch",
 
     "prestart-mockapi": "npm run generate-mock-data",
-    "start-mockapi": "json-server --watch src/api/db.json --port %npm_package_config_mockApiPort%",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001",
 
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
     "test-verbose": "mocha --reporter spec buildScripts/testSetup.js \"src/**/*.test.js\"",

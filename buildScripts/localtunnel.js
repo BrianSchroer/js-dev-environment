@@ -6,8 +6,7 @@
 
 import chalk from 'chalk';
 import localtunnel from  'localtunnel';
-
-import config from '../buildScripts/buildScripts.config';
+import config from '../src/config';
 
 var tunnel = localtunnel(config.port, {subdomain: config.localtunnelSubDomain},
     function(err, tunnel) {

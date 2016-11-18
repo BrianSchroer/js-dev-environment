@@ -1,5 +1,7 @@
+import config from '../config';
+
 export default function getBaseUrl() {
-    const mockApiUrl = 'http://localhost:3001/';
+    const mockApiUrl = `http://localhost:${config.mockApiPort}/`;
     return getQueryStringParameterByName('useMockApi') ? mockApiUrl : '/';
 }
 
